@@ -19,7 +19,7 @@ amatc <- yuk[yuk$year == 2018, "amatc"]
 
 ## Data Aquisition
 
-The 2018 value of AMATC was retrieved using the [rnoaa](https://github.com/ropensci/rnoaa) R package which uses the [NOAA CDO](https://www.ncdc.noaa.gov/cdo-web/) API. The daily values of average daily temperature (TAVG) were averaged together to calculate AMATC. This isn't necessarily how NOAA calculates average monthly temperatures but this gets us access to the value earlier and tends to be close enough to the final monthly average temperature to not affect our results.
+The 2018 value of AMATC was retrieved using manually using http://w2.weather.gov/climate/xmacis.php?wfo=pafg. The value was -3.2 °C.
 
 ## Graphical Analysis
 
@@ -33,7 +33,7 @@ ggplot(yuk, aes(amatc, mdj)) +
 ggsave("mdj_against_amatc.png", width = 4, height = 4)
 ```
 
-**Intepretation:** An AMATC of -7.3 C is just about in the middle of the historical range for this variable so we should expect an average run timing.
+**Intepretation:** An AMATC of -3.2 °C slightly warmer than average (`r round(mean(yuk$amatc), 1)` °C) so we would expect a slightly early run timing.
 
 ## Forecast
 
@@ -43,10 +43,10 @@ model <- lm(mdj ~ amatc, data = subset(yuk, year < 2018))
 predicted <- floor(unname(predict(model, newdata =  yuk[yuk$year == 2018,])))
 ```
 
-To forecast MDJ for 2018, I followed the approach as in previous years.
+To forecast MDJ for 2018, I followed the approach as in previous years:
 
 I fit a simple linear model of AMATC vs. MDJ using 55 years (1961 -- 2017) of historical AMATC and MDJ.
-I then predicted the 2018 MDJ using the fitted model which came out to be **June `r predicted`**.
+I then predicted the 2018 MDJ using the fitted model which came out to be **June `r predicted`** which is just slightly earlier than average (mean `r floor(mean(yuk$mdj, na.rm = TRUE))`).
 
 ### Hindcasting
 

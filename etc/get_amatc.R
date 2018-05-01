@@ -11,15 +11,22 @@ ncdc_stations(datasetid = 'GHCND', stationid = nome_station_id)
 
 # Find out what I need to type into `ghcnd` and subseqently filter on to get
 # AMATC
-datatypes <- ncdc_datatypes(stationid = value, limit = 1000)
+datatypes <- ncdc_datatypes(stationid = nome_station_id, limit = 1000)
 
 # Calculate AMATC
 all_ghcnd <- ncdc(datasetid = "GHCND", 
                   stationid = 'GHCND:USW00026617', 
-                  startdate = '2017-04-01', 
-                  enddate = '2017-04-30', 
+                  startdate = '2018-04-01', 
+                  enddate = '2018-04-30', 
                   limit = 1000)
 
 all_ghcnd$data %>% 
   filter(datatype == "TAVG") %>% 
   summarize(tavg_mean = round(mean(value), 2))
+
+
+all_ghcnd <- ncdc(datasetid = "TOBS", 
+                  stationid = 'GHCND:USW00026617', 
+                  startdate = '2018-04-01', 
+                  enddate = '2018-04-30', 
+                  limit = 1000)

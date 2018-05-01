@@ -1,34 +1,29 @@
 Data Aquisition
 ---------------
 
-The 2018 value of AMATC was retrieved using the
-[rnoaa](https://github.com/ropensci/rnoaa) R package which uses the
-[NOAA CDO](https://www.ncdc.noaa.gov/cdo-web/) API. The daily values of
-average daily temperature (TAVG) were averaged together to calculate
-AMATC. This isn’t necessarily how NOAA calculates average monthly
-temperatures but this gets us access to the value earlier and tends to
-be close enough to the final monthly average temperature to not affect
-our results.
+The 2018 value of AMATC was retrieved using manually using
+<http://w2.weather.gov/climate/xmacis.php?wfo=pafg>. The value was -3.2
+°C.
 
 Graphical Analysis
 ------------------
 
-How does the 2018 value of AMATC, -7.3, compare to the historical data?
+How does the 2018 value of AMATC, -3.2, compare to the historical data?
 
 ![](README_files/figure-markdown_strict/amatc_plot-1.png)
 
-**Intepretation:** An AMATC of -7.3 C is just about in the middle of the
-historical range for this variable so we should expect an average run
-timing.
+**Intepretation:** An AMATC of -3.2 °C slightly warmer than average
+(-6.7 °C) so we would expect a slightly early run timing.
 
 Forecast
 --------
 
-To forecast MDJ for 2018, I followed the approach as in previous years.
+To forecast MDJ for 2018, I followed the approach as in previous years:
 
 I fit a simple linear model of AMATC vs. MDJ using 55 years (1961 –
 2017) of historical AMATC and MDJ. I then predicted the 2018 MDJ using
-the fitted model which came out to be **June 21**.
+the fitted model which came out to be **June 18** which is just slightly
+earlier than average (mean 21).
 
 ### Hindcasting
 
