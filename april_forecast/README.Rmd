@@ -1,6 +1,7 @@
 ---
 title: April Timing Forecast
 author: Bryce Mecum
+output: md_document
 ---
 
 ```{r packages, include=FALSE}
