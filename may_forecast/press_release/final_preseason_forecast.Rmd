@@ -1,0 +1,106 @@
+---
+geometry: margin=0.9in
+mainfont: Avenir
+output:
+  word_document: default
+  pdf_document:
+    latex_engine: xelatex
+urlcolor: blue
+---
+
+![](images/combined.png)
+
+\begin{center}
+  \huge{2018 Final Prospects and Forecast for Chinook Salmon Timing}
+  
+  \large{Lower Yukon River (Area Y-1)}
+\end{center}
+
+```{r read-in-data, echo=FALSE, include=FALSE, message=FALSE}
+library(readr)
+library(purrr)
+
+# Raw data
+yuk <- read_csv("../../data/yukon.csv")
+fifdj_avg <- floor(mean(yuk$fifdj, na.rm = TRUE))
+qdj_avg <- floor(mean(yuk$qdj, na.rm = TRUE))
+mdj_avg <- floor(mean(yuk$mdj, na.rm = TRUE))
+
+amatc_avg <- round(mean(yuk$amatc, na.rm = TRUE), 2)
+msstc_avg <- round(mean(yuk$msstc, na.rm = TRUE), 2)
+pice_avg <- round(mean(yuk$pice, na.rm = TRUE), 2)
+
+avg_range_txt <- paste(range(yuk$year[!is.na(yuk$mdj)]), collapse = " - ")
+
+# Predictions
+pred_df <- readr::read_csv("../predictions.csv",
+                           col_types = cols(col_character(), 
+                                            col_integer()))
+pred <- as.list(pred_df$prediction) # Clean up predictions
+names(pred) <- pred_df$percentile
+
+# Determine the language to use to compare the current year's predicted mdj with
+# the historical average
+comparison_text_time <- function(value, compare_to) {
+  comp <- value - compare_to
+  text <- ""
+  
+  if (comp == 0) {
+    text <- "equal to"
+  } else if (comp < 0) {
+    text <- "earlier than"
+  } else if (comp > 0) {
+    text <- "later than"
+  }
+  
+  text
+}
+
+comparison_text_value <- function(value, compare_to) {
+  comp <- value - compare_to
+  text <- ""
+  
+  if (comp == 0) {
+    text <- "equal to"
+  } else if (comp < 0) {
+    text <- "less than"
+  } else if (comp > 0) {
+    text <- "greater than"
+  }
+  
+  text
+}
+
+
+fifdj_comparison <- comparison_text_time(pred$mdj, mdj_avg)
+qdj_comparison <- comparison_text_time(pred$mdj, mdj_avg)
+mdj_comparison <- comparison_text_time(pred$mdj, mdj_avg)
+amatc_comparison <- comparison_text_value(yuk[nrow(yuk),"amatc"], amatc_avg)
+msstc_comparison <- comparison_text_value(yuk[nrow(yuk),"msstc"], msstc_avg)
+pice_comparison <- comparison_text_value(yuk[nrow(yuk),"pice"], pice_avg)
+
+```
+
+## Run Timing Prospects for 2018
+
+The 2018 timing for Yukon River Chinook is expected to be slightly earlier than average.
+The first significant pulse (15% point) of Chinook in the lower river is expected on June `r pred$fifdj`, which is `r fifdj_comparison` than the long-term average of June `r fifdj_avg` (`r avg_range_txt`).
+The half-way point (50%) of the run is expected be reached on June `r pred$mdj`, which is `r mdj_comparison` than the long-term average of June `r mdj_avg` (`r avg_range_txt`).
+The April mean air temperature at Nome this year of `r yuk[nrow(yuk),"amatc"]` °C was `r amatc_comparison` than the long-term average of `r amatc_avg` °C (`r avg_range_txt`).
+In keeping with the early spring conditions in northwestern Alaska, the Spring (April 20 – May 31) sea ice concentration was `r yuk[nrow(yuk),"pice"]` %, significantly lower than the long-term average of `r pice_avg` %, as measured in the waters between the Yukon River delta and St. Lawrence Island (Shpanberg Strait). 
+
+## Run Timing Forecast by Date 2018
+
+Based on the relationship between the dates of the three percentiles (15%, 25%, 50%) and the sea ice concentrations and the air and sea surface temperatures, the predicted dates of the three percentiles are June `r pred$fifdj` (15%), June `r pred$qdj` (25%), and June `r pred$mdj` (50%) in District  Y-1 of the Lower Yukon River
+
+| Percentile (%) | Predicted Date |
+|-|-|
+| 15 | June `r pred$fifdj` |
+| 25 | June `r pred$qdj` |
+| 50 | June `r pred$mdj` |
+
+See [the project website](http://www.aoos.org/2018-run-timing-outlook-and-forecast-summary-chinook-salmon-yukon-river-delta/) for comparisons of the estimated daily percentages of the run to results of the 2018 Lower Yukon Test Fishery and past years’ test fisheries. If the current timing model doesn’t match reality, the forecast dates will be updated and posted on the web site.
+
+## Credits
+
+Prepared and reviewed by Bryce Mecum [brycemecum@gmail.com](mailto:brycemecum@gmail.com), Phil Mundy [proymundy@gmail.com](mailto:proymundy@gmail.com) Jordan Watson [jordan.watson@noaa.gov](mailto:jordan.watson@noaa.gov) and Zach Liller [zachary.liller@alaska.gov](mailto:zachary.liller@alaska.gov). Data management and web page support by Will Koeppen [will@axiomalaska.com](mailto:will@axiomalaska.com). Web support also provided by Holly Kent [kent@aoos.org](mailto: kent@aoos.org). Yukon Chinook in-season salmon data and management agency coordination by Fred West fred.west@alaska.gov, Sean Larson [sean.larson@alaska.gov](mailto:sean.larson@alaska.gov) and Holly Carroll [holly.carroll@alaska.gov](mailto:holly.carroll@alaska.gov).  Financial and material supports were provided by the Alaska Ocean Observing System, NOAA National Marine Fisheries Service and the Alaska Department of Fish and Game.
