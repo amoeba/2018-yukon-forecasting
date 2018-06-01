@@ -1,0 +1,171 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{Avenir}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{}
+  \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+
+\begin{document}
+
+\includegraphics{images/combined.png}
+
+\begin{center}
+  \huge{2018 Final Prospects and Forecast for Chinook Salmon Timing}
+  
+  \large{Lower Yukon River (Area Y-1)}
+\end{center}
+
+\hypertarget{run-timing-prospects-for-2018}{%
+\subsection{Run Timing Prospects for
+2018}\label{run-timing-prospects-for-2018}}
+
+The 2018 timing for Yukon River Chinook is expected to be slightly
+earlier than average. The first significant pulse (15\% point) of
+Chinook in the lower river is expected on June 9, which is earlier than
+the long-term average of June 13 (1961 -- 2017). The half-way point
+(50\%) of the run is expected be reached on June 17, which is also
+earlier than the long-term average of June 21 (1961 -- 2017). The April
+mean air temperature at Nome this year of -3.2°C was warmer than the
+long-term average of -6.69°C (1961 -- 2017). In keeping with the early
+spring conditions in northwestern Alaska, the Spring (March 19 -- May
+31) sea ice coverage was 11.85\%, which is very far outside the
+experience of the historical database (1970 -- 2017), which has a
+long-term average of 55.37\%, as measured in the waters between the
+Yukon River delta and St.~Lawrence Island (Shpanberg Strait).
+
+\hypertarget{run-timing-forecast-by-date-2018}{%
+\subsection{Run Timing Forecast by Date
+2018}\label{run-timing-forecast-by-date-2018}}
+
+Based on the relationship between the dates of the three percentiles
+(15\%, 25\%, 50\%) and the sea ice coverage and the air and sea surface
+temperatures, the predicted dates of the three percentiles are June 9
+(15\%), June 11 (25\%), and June 17 (50\%) in District Y-1 of the Lower
+Yukon River.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Percentile (\%) & Predicted Date\tabularnewline
+\midrule
+\endhead
+15 & June 9\tabularnewline
+25 & June 11\tabularnewline
+50 & June 17\tabularnewline
+\bottomrule
+\end{longtable}
+
+See
+\href{http://www.aoos.org/2018-run-timing-outlook-and-forecast-summary-chinook-salmon-yukon-river-delta/}{the
+project website} for comparisons of the estimated daily percentages of
+the run to results of the 2018 Lower Yukon Test Fishery and past years'
+test fisheries. If the current timing model doesn't match reality, the
+forecast dates will be updated and posted on the web site.
+
+\hypertarget{credits}{%
+\subsection{Credits}\label{credits}}
+
+Prepared and reviewed by Bryce Mecum
+\href{mailto:brycemecum@gmail.com}{\nolinkurl{brycemecum@gmail.com}},
+Phil Mundy
+\href{mailto:proymundy@gmail.com}{\nolinkurl{proymundy@gmail.com}}
+Jordan Watson
+\href{mailto:jordan.watson@noaa.gov}{\nolinkurl{jordan.watson@noaa.gov}}
+and Zach Liller
+\href{mailto:zachary.liller@alaska.gov}{\nolinkurl{zachary.liller@alaska.gov}}.
+Data management and web page support by Will Koeppen
+\href{mailto:will@axiomalaska.com}{\nolinkurl{will@axiomalaska.com}}.
+Web support also provided by Holly Kent
+\href{mailto:\%20kent@aoos.org}{kent@aoos.org}. Yukon Chinook in-season
+salmon data and management agency coordination by Fred West
+\href{mailto:fred.west@alaska.gov}{\nolinkurl{fred.west@alaska.gov}},
+Sean Larson
+\href{mailto:sean.larson@alaska.gov}{\nolinkurl{sean.larson@alaska.gov}}
+and Holly Carroll
+\href{mailto:holly.carroll@alaska.gov}{\nolinkurl{holly.carroll@alaska.gov}}.
+Financial and material supports were provided by the Alaska Ocean
+Observing System, NOAA National Marine Fisheries Service and the Alaska
+Department of Fish and Game.
+
+
+\end{document}

@@ -3,6 +3,8 @@ mainfont: Avenir
 output:
   pdf_document:
     latex_engine: xelatex
+  word_document: default
+  github_document: default
 urlcolor: blue
 ---
 
