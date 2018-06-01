@@ -16,7 +16,7 @@ models <- c("mdj ~ amatc",
             "mdj ~ amatc + msstc + pice")
 
 # Set up selection
-hindcast_years <- 2002:2016
+hindcast_years <- 2003:2017
 round_method <- floor # Floor predictions
 
 result <- data.frame()

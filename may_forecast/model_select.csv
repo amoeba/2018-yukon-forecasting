@@ -1,0 +1,8 @@
+"","model","MAPE","SDMAPE","width","p.in","absmax"
+"1","mdj ~ amatc",3.93,3.06,6.66,0.53,12
+"2","mdj ~ msstc",1.73,1.49,4.74,0.73,5
+"3","mdj ~ pice",2.27,2.22,6,0.73,8
+"4","mdj ~ amatc + msstc",2,1.65,6.37,0.8,7
+"5","mdj ~ amatc + pice",2.8,2.21,7.63,0.67,9
+"6","mdj ~ msstc + pice",1.6,1.24,6.19,0.87,5
+"7","mdj ~ amatc + msstc + pice",1.6,1.45,7.55,0.87,6
