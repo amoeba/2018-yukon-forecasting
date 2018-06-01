@@ -59,7 +59,8 @@ for (model_formula in models) {
     "SDMAPE"=round(sd(abs(model_result$predicted - model_result$observed)), 2),
     "width"=round(mean(model_result$int_width), 2),
     "p.in"=round(sum(model_result$in_interval) / length(model_result$in_interval), 2),
-    "absmax"=max(abs(model_result$predicted - model_result$observed))
+    "absmax"=max(abs(model_result$predicted - model_result$observed)),
+    "meanbias" = round(mean(model_result$predicted - model_result$observed), 2)
   )
 
   result <- rbind(result,
