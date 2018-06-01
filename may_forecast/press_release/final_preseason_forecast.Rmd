@@ -26,9 +26,7 @@ mdj_avg <- floor(mean(yuk$mdj, na.rm = TRUE))
 
 amatc_avg <- round(mean(yuk$amatc, na.rm = TRUE), 2)
 msstc_avg <- round(mean(yuk$msstc, na.rm = TRUE), 2)
-pice_avg <- round(mean(yuk$pice, na.rm = TRUE), 2)
-
-avg_range_txt <- paste(range(yuk$year[!is.na(yuk$mdj)]), collapse = " - ")
+pice_avg <- round(mean(yuk$pice, na.rm = TRUE), 4)
 
 # Predictions
 pred_df <- readr::read_csv("../predictions.csv",
@@ -36,60 +34,19 @@ pred_df <- readr::read_csv("../predictions.csv",
                                             col_integer()))
 pred <- as.list(pred_df$prediction) # Clean up predictions
 names(pred) <- pred_df$percentile
-
-# Determine the language to use to compare the current year's predicted mdj with
-# the historical average
-comparison_text_time <- function(value, compare_to) {
-  comp <- value - compare_to
-  text <- ""
-  
-  if (comp == 0) {
-    text <- "equal to"
-  } else if (comp < 0) {
-    text <- "earlier than"
-  } else if (comp > 0) {
-    text <- "later than"
-  }
-  
-  text
-}
-
-comparison_text_value <- function(value, compare_to) {
-  comp <- value - compare_to
-  text <- ""
-  
-  if (comp == 0) {
-    text <- "equal to"
-  } else if (comp < 0) {
-    text <- "less than"
-  } else if (comp > 0) {
-    text <- "greater than"
-  }
-  
-  text
-}
-
-
-fifdj_comparison <- comparison_text_time(pred$mdj, mdj_avg)
-qdj_comparison <- comparison_text_time(pred$mdj, mdj_avg)
-mdj_comparison <- comparison_text_time(pred$mdj, mdj_avg)
-amatc_comparison <- comparison_text_value(yuk[nrow(yuk),"amatc"], amatc_avg)
-msstc_comparison <- comparison_text_value(yuk[nrow(yuk),"msstc"], msstc_avg)
-pice_comparison <- comparison_text_value(yuk[nrow(yuk),"pice"], pice_avg)
-
 ```
 
 ## Run Timing Prospects for 2018
 
 The 2018 timing for Yukon River Chinook is expected to be slightly earlier than average.
-The first significant pulse (15% point) of Chinook in the lower river is expected on June `r pred$fifdj`, which is `r fifdj_comparison` than the long-term average of June `r fifdj_avg` (`r avg_range_txt`).
-The half-way point (50%) of the run is expected be reached on June `r pred$mdj`, which is `r mdj_comparison` than the long-term average of June `r mdj_avg` (`r avg_range_txt`).
-The April mean air temperature at Nome this year of `r yuk[nrow(yuk),"amatc"]`°C was `r amatc_comparison` than the long-term average of `r amatc_avg`°C (`r avg_range_txt`).
-In keeping with the early spring conditions in northwestern Alaska, the Spring (March 19 – May 31) sea ice coverage was `r yuk[nrow(yuk),"pice"] * 100`%, significantly lower than the long-term average of `r pice_avg * 100`%, as measured in the waters between the Yukon River delta and St. Lawrence Island (Shpanberg Strait). 
+The first significant pulse (15% point) of Chinook in the lower river is expected on June 9, which is earlier than the long-term average of June 13 (1961 -- 2017).
+The half-way point (50%) of the run is expected be reached on June 17, which is also earlier than the long-term average of June 21 (1961 -- 2017).
+The April mean air temperature at Nome this year of -3.2°C was warmer than the long-term average of -6.69°C (1961 -- 2017).
+In keeping with the early spring conditions in northwestern Alaska, the Spring (March 19 – May 31) sea ice coverage was 11.85%, which is very far outside the experience of the historical database (1970 -- 2017), which has a long-term average of 55.37%, as measured in the waters between the Yukon River delta and St. Lawrence Island (Shpanberg Strait). 
 
 ## Run Timing Forecast by Date 2018
 
-Based on the relationship between the dates of the three percentiles (15%, 25%, 50%) and the sea ice coverage and the air and sea surface temperatures, the predicted dates of the three percentiles are June `r pred$fifdj` (15%), June `r pred$qdj` (25%), and June `r pred$mdj` (50%) in District  Y-1 of the Lower Yukon River
+Based on the relationship between the dates of the three percentiles (15%, 25%, 50%) and the sea ice coverage and the air and sea surface temperatures, the predicted dates of the three percentiles are June `r pred$fifdj` (15%), June `r pred$qdj` (25%), and June `r pred$mdj` (50%) in District  Y-1 of the Lower Yukon River.
 
 | Percentile (%) | Predicted Date |
 |-|-|
