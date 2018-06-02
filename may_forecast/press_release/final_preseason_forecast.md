@@ -1,6 +1,8 @@
 
 ![](images/combined.png)
 
+Friday, June 1, 2018
+
 ## Run Timing Prospects for 2018
 
 The 2018 timing for Yukon River Chinook is expected to be slightly

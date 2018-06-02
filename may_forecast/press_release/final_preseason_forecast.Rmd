@@ -10,18 +10,25 @@ urlcolor: blue
 
 ![](images/combined.png)
 
-\begin{center}
-  \huge{2018 Final Prospects and Forecast for Chinook Salmon Timing}
-  
-  \large{Lower Yukon River (Area Y-1)}
-\end{center}
 
-```{r read-in-data, echo=FALSE, include=FALSE, message=FALSE}
+\textcolor{red}{\large{DRAFT}}
+
+```{r, message=FALSE, echo=TRUE, include=FALSE}
+library(lubridate)
 library(readr)
 library(purrr)
 library(dplyr)
 library(here)
+```
 
+`r strftime(now(), format = "%A, %B %e, %Y")`
+
+\begin{center}
+  \huge{2018 Final Prospects and Forecast for Chinook Salmon Timing}
+  \large{Lower Yukon River (Area Y-1)}
+\end{center}
+
+```{r read-in-data, echo=FALSE, include=FALSE, message=FALSE}
 # Raw data
 yuk <- read_csv(here("data", "yukon.csv"))
 
