@@ -1,7 +1,7 @@
 
 ![](images/combined.png)
 
-Saturday, June 2, 2018
+Monday, June 4, 2018
 
 ## Run Timing Prospects for 2018
 
@@ -12,12 +12,14 @@ long-term average of June 13 (1961 – 2017). The half-way point (50%) of
 the run is expected on June 17, which is also earlier than the long-term
 average of June 21 (1961 – 2017). The April mean air temperature at Nome
 this year of -3.2°C was warmer than the long-term average of -6.8°C
-(1961 – 2017). In keeping with the early spring conditions in
-northwestern Alaska, the Spring (March 19 – May 31) sea ice coverage was
-11.85%, which is very far outside the experience of the historical
-database (1970 – 2017), which has a long-term average of 56.27%, as
-measured in the waters between the Yukon River delta and St. Lawrence
-Island (Shpanberg Strait).
+(1961 – 2017). The May mean sea surface temperature as modeled just off
+the Yukon River delta (63.18°N 165.58°W) of -0.2°C was warmer than the
+long-term average of -0.4°C (1961 – 2017). In keeping with the early
+spring conditions in northwestern Alaska, the Spring (March 19 – May 31)
+sea ice coverage was 11.85%, which is very far outside the experience of
+the historical database (1970 – 2017), which has a long-term average of
+56.27%, as measured in the waters between the Yukon River delta and
+St. Lawrence Island (Shpanberg Strait).
 
 ## Run Timing Forecast by Date 2018
 
