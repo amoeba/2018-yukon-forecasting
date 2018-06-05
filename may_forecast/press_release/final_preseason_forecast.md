@@ -1,7 +1,7 @@
 
 ![](images/combined.png)
 
-Monday, June 4, 2018
+Tuesday, June 5, 2018
 
 ## Run Timing Prospects for 2018
 
