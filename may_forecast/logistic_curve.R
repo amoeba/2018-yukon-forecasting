@@ -9,7 +9,7 @@ library(readr)
 predictions <- read_csv("may_forecast/predictions.csv")
 
 # Define the logistic function and its RSS
-mu_i <- 15
+mu_i <- 17
 s_i <- 5
 
 logi_fun <- function(x, mu, s) { 1 / (1 + exp(-((x - mu)/s))) }
@@ -30,7 +30,7 @@ save("optim_result", file = "may_forecast/optim_result.RData")
 
 # 2017 override of optim values because they are unstable when solved with optim
 # I fit them in Excel instead and all is will. They were fit simultaneously (mu and s)
-optim_result <- list(par = c(18.97138802, 5.293539509))
+optim_result <- list(par = c(16.93531197, 4.950195071))
 
 xrange <- -10:50
 cpue <- data.frame(day = xrange,
