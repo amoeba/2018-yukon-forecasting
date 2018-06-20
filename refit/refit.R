@@ -3,7 +3,7 @@
 
 library(dplyr)
 library(readr)
-
+library(ggplot2)
 
 calculate_fit_rss <- function(mu, s) {
   logi_fun <- function(x, mu, s) { 1 / (1 + exp(-((x - mu)/s))) }
@@ -30,13 +30,11 @@ calculate_fit_rss <- function(mu, s) {
     summarize(rss = sum(r^2))
 }
 
-candidates <- crossing(mu = 15:19, s = 4:6)
-candidates %>% 
+crossing(mu = 12:26, s = 4) %>% 
   purrr::pmap(~ bind_cols(tibble(mu = .x, s = .y), calculate_fit_rss(.x, .y))) %>% 
   bind_rows() %>% 
-  arrange(rss) -> scores
-
-library(ggplot2)
-
-ggplot(scores, aes(x = mu, y = s, size = rss)) +
+  arrange(rss) %>% 
+  ggplot(aes(x = mu, y = s, size = rss)) +
   geom_point()
+
+ggsave("refit/figures/scores.pdf", width = 4, height = 4)
