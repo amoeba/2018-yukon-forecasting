@@ -35,7 +35,11 @@ crossing(mu = 12:26, s = 4) %>%
   purrr::pmap(~ bind_cols(tibble(mu = .x, s = .y), calculate_fit_rss(.x, .y))) %>% 
   bind_rows() %>% 
   arrange(rss) %>% 
-  ggplot(aes(x = mu, y = s, size = rss)) +
-  geom_point()
+  mutate(score = seq_len(nrow(.)), 
+         label = paste(mu, s, sep = "/")) %>% 
+  head(n = 10) %>% 
+  ggplot(aes(x = score, y = rss, label = label)) +
+  geom_col() +
+  geom_text(angle = 90, hjust = -3)
 
 ggsave("refit/figures/scores.pdf", width = 4, height = 4)
