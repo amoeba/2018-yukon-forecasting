@@ -4,6 +4,7 @@
 library(dplyr)
 library(readr)
 library(ggplot2)
+library(tidyr)
 
 calculate_fit_rss <- function(mu, s) {
   logi_fun <- function(x, mu, s) { 1 / (1 + exp(-((x - mu)/s))) }
