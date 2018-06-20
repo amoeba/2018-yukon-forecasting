@@ -7,9 +7,9 @@ library(ggplot2)
 # Load data
 inseason <- read.csv("data/inseason.csv", stringsAsFactors = FALSE)
 inseason$ccpue <- cumsum(inseason$cpue)
-logistic_curve <- read.csv("may_forecast/logistic_curve.csv",
+logistic_curve <- read.csv("refit/refit_logistic_curve.csv",
                            stringsAsFactors = FALSE)
-predictions <- read.csv("may_forecast/predictions.csv",
+predictions <- read.csv("refit/refit_predictions.csv",
                         stringsAsFactors = FALSE)
 
 # Calculate estimated pccpue

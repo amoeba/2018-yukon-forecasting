@@ -31,15 +31,15 @@ calculate_fit_rss <- function(mu, s) {
     summarize(rss = sum(r^2))
 }
 
-crossing(mu = 12:26, s = 4) %>% 
+crossing(mu = 17:30, s = 4:6) %>% 
   purrr::pmap(~ bind_cols(tibble(mu = .x, s = .y), calculate_fit_rss(.x, .y))) %>% 
   bind_rows() %>% 
   arrange(rss) %>% 
   mutate(score = seq_len(nrow(.)), 
          label = paste(mu, s, sep = "/")) %>% 
-  head(n = 10) %>% 
+  head(n = 100) %>% 
   ggplot(aes(x = score, y = rss, label = label)) +
   geom_col() +
   geom_text(angle = 90, hjust = -3)
 
-ggsave("refit/figures/scores.pdf", width = 4, height = 4)
+ggsave("refit/figures/scores.pdf", width = 12, height = 4)

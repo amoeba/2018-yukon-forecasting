@@ -27,7 +27,7 @@ do_calc_modeled_v_estimated <- function(mu, s) {
     gather(type, pccpue, -day)
 }
 
-crossing(mu = 12:23, s = 4:6) %>% 
+crossing(mu = 17:30, s = 4:6) %>% 
   purrr::pmap(~ do_calc_modeled_v_estimated(.x, .y) %>% mutate(mu = .x, s = .y)) %>% 
   bind_rows() %>% 
   ggplot(aes(day, pccpue, color = type)) +
@@ -58,7 +58,7 @@ do_final_cpue <- function(mu, s) {
   final_cpue
 }
 
-crossing(mu = 12:23, s = 4:6) %>% 
+crossing(mu = 17:30, s = 4:6) %>% 
   purrr::pmap(~ do_final_cpue(.x, .y) %>% mutate(mu = .x, s = .y)) %>% 
   bind_rows() %>% 
   ggplot(aes(day, estimate)) +
