@@ -17,15 +17,15 @@ Forecasted Timing of Percentiles of Cumulative CPUE
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">15%</td>
-<td style="text-align: right;">9</td>
+<td style="text-align: right;">16</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">25%</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">18</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">50%</td>
-<td style="text-align: right;">17</td>
+<td style="text-align: right;">22</td>
 </tr>
 </tbody>
 </table>

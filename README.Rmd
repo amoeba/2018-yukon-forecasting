@@ -9,7 +9,7 @@ Data, code, and output for the 2018 operational forecast of Yukon River Chinook 
 ```{r, echo=FALSE, message=FALSE}
 library(knitr)
 library(readr)
-predictions <- suppressWarnings({read_csv("may_forecast/predictions.csv")})
+predictions <- suppressWarnings({read_csv("refit/predictions.csv")})
 predictions$percentile <- c("15%", "25%", "50%")
 ```
 
