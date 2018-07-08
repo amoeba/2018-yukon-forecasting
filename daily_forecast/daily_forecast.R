@@ -5,7 +5,7 @@
 library(ggplot2)
 
 # Load data
-inseason <- read.csv("data/inseason.csv", stringsAsFactors = FALSE)
+inseason <- read.csv("data/bedrift.csv", stringsAsFactors = FALSE)
 inseason$ccpue <- cumsum(inseason$cpue)
 logistic_curve <- read.csv("refit/refit_logistic_curve.csv",
                            stringsAsFactors = FALSE)
